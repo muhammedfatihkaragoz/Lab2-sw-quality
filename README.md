@@ -1,12 +1,13 @@
 # SENG272 Lab 2 - ISO/IEC 25010 Software Quality Evaluation
 
-This project implements a software quality evaluation system based on ISO/IEC 25010 and ISO/IEC 25023.
+This project evaluates software system quality using ISO/IEC 25010 quality characteristics and ISO/IEC 25023 measurement metrics. The system is implemented using Java OOP principles and Collections Framework (ArrayList, HashMap).
 
 ## Features
 - Criterion-based scoring system
-- Quality dimension evaluation
-- Overall system quality score
-- Weakest dimension analysis
+- Quality dimension evaluation (ISO/IEC 25010)
+- Overall system quality score calculation
+- Weakest dimension detection (gap analysis)
+- Console-based formatted report
 
 ## Project Structure
 - src/
@@ -16,14 +17,30 @@ This project implements a software quality evaluation system based on ISO/IEC 25
   - SWSystemData.java
   - Main.java
 
-## ISO Reference
-This project uses ISO/IEC 25010 and ISO/IEC 25023 quality metrics for evaluation.
-
 ## ISO/IEC 25010 Quality Characteristics
 
-| Dimension | Code | Metrics |
-|----------|------|--------|
-| Functional Suitability | QC.FS | Functional Completeness, Functional Correctness |
-| Reliability | QC.RE | Availability, Defect Density |
-| Performance Efficiency | QC.PE | Response Time, CPU Utilisation |
-| Maintainability | QC.MA | Test Coverage, Cyclomatic Complexity |
+| Dimension | Code |
+|----------|------|
+| Functional Suitability | QC.FS |
+| Reliability | QC.RE |
+| Performance Efficiency | QC.PE |
+| Maintainability | QC.MA |
+
+## ISO/IEC 25023 Metric Reference
+
+| Characteristic | Metric | Direction | Unit |
+|---------------|--------|----------|------|
+| Functional Suitability | Functional Completeness Ratio | Higher | % |
+| Functional Suitability | Functional Correctness Ratio | Higher | % |
+| Reliability | Availability Ratio | Higher | % |
+| Reliability | Defect Density | Lower | defect/KLOC |
+| Performance Efficiency | Response Time | Lower | ms |
+| Performance Efficiency | CPU Utilisation | Lower | % |
+| Maintainability | Test Coverage Ratio | Higher | % |
+| Maintainability | Cyclomatic Complexity | Lower | score |
+
+## Notes
+- Scores are normalized between 1 and 5
+- Results are rounded to nearest 0.5
+- Weighted averages are used for dimension scores
+- Overall score is calculated based on dimension weights
